@@ -34,18 +34,16 @@ Visualize literature relationships as a left-to-right directed acyclic graph. Up
 
 ### Download the macOS App
 
-Most users should download the `.dmg` installer from GitHub Releases instead of building from source:
+You can download the `.dmg` installer from GitHub Releases:
 
 ```text
-https://github.com/<your-github-name>/Watercourse/releases/latest
+https://github.com/lei-jx24/Watercourse_release/releases/latest
 ```
 
 Choose the build that matches your Mac:
 
 - Apple Silicon: `Watercourse-0.1.0-arm64.dmg`
 - Intel Mac: `Watercourse-0.1.0-x64.dmg`
-
-Release artifacts are generated locally under `release/mac/`, but they are not committed to the repository. Upload the `.dmg` files to GitHub Releases when publishing a version.
 
 ### Install Dependencies
 
@@ -139,18 +137,16 @@ Watercourse 是一个本地优先的学术文献管理工具，用于阅读 PDF�
 
 ### 下载 macOS 应用
 
-大多数用户应该直接从 GitHub Releases 下载 `.dmg` 安装包，而不是从源码构建：
+你可以直接从 GitHub Releases 下载 `.dmg` 安装包：
 
 ```text
-https://github.com/<your-github-name>/Watercourse/releases/latest
+https://github.com/lei-jx24/Watercourse_release/releases/latest
 ```
 
 根据 Mac 芯片选择对应版本：
 
 - Apple Silicon：`Watercourse-0.1.0-arm64.dmg`
 - Intel Mac：`Watercourse-0.1.0-x64.dmg`
-
-发布包会在本地生成到 `release/mac/`，但不应该提交进仓库。正式发布版本时，把 `.dmg` 文件上传到 GitHub Releases 即可。
 
 ### 安装依赖
 
