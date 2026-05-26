@@ -45,13 +45,17 @@ Choose the build that matches your Mac:
 - Apple Silicon: `Watercourse-0.1.0-arm64.dmg`
 - Intel Mac: `Watercourse-0.1.0-x64.dmg`
 
-### Install Dependencies
+### Deploy
+
+Besides downloading the pre-built release packages, you may also deploy from source. The environment setup and installation steps are as follows:
+
+##### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Run in Development
+##### Run in Development
 
 ```bash
 npm run dev
@@ -63,9 +67,9 @@ If your shell cannot find `npm`, and you use the same local nvm setup as this pr
 PATH=$HOME/.nvm/versions/node/v22.22.3/bin:$PATH npm run dev
 ```
 
-### Build macOS Packages
+##### Build macOS Packages
 
-Stage 10 currently targets macOS only.
+Watercourse currently targets macOS only.
 
 ```bash
 npm run package:mac
@@ -148,13 +152,17 @@ https://github.com/lei-jx24/Watercourse_release/releases/latest
 - Apple Silicon：`Watercourse-0.1.0-arm64.dmg`
 - Intel Mac：`Watercourse-0.1.0-x64.dmg`
 
-### 安装依赖
+### 部署
+
+除了直接下载编译好的安装包，你也可以通过源码方式部署，具体环境配置与安装步骤如下：
+
+##### 安装依赖
 
 ```bash
 npm install
 ```
 
-### 运行开发版
+##### 运行开发版
 
 ```bash
 npm run dev
@@ -166,9 +174,9 @@ npm run dev
 PATH=$HOME/.nvm/versions/node/v22.22.3/bin:$PATH npm run dev
 ```
 
-### 打包 macOS 安装包
+##### 打包 macOS 安装包
 
-Stage 10 当前只做 macOS。
+当前只做 macOS。
 
 ```bash
 npm run package:mac
