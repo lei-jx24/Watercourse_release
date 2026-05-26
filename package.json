@@ -1,0 +1,85 @@
+{
+  "name": "watercourse",
+  "version": "0.1.0",
+  "description": "Local academic literature manager with DAG-based topology visualization.",
+  "main": "out/main/index.js",
+  "author": "Watercourse",
+  "private": true,
+  "scripts": {
+    "dev": "npm run rebuild:electron && electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "icon:mac": "node scripts/generate-rounded-icon.mjs assets/icon.jpg assets/icon.png",
+    "package:mac": "npm run build && electron-builder --mac",
+    "package:mac:arm64": "npm run build && electron-builder --mac --arm64",
+    "package:mac:x64": "npm run build && electron-builder --mac --x64",
+    "preview": "electron-vite preview",
+    "rebuild:node": "npm rebuild better-sqlite3",
+    "rebuild:electron": "npm rebuild better-sqlite3 --runtime=electron --target=39.8.10 --dist-url=https://electronjs.org/headers",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run rebuild:node && vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "better-sqlite3": "^12.10.0",
+    "electron-vite": "^4.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "electron": "^39.8.10",
+    "electron-builder": "^26.8.1",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "vitest": "^4.0.13"
+  },
+  "build": {
+    "appId": "com.watercourse.app",
+    "productName": "Watercourse",
+    "copyright": "Copyright © 2026 Watercourse",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
+    "directories": {
+      "output": "release/mac"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/better-sqlite3/build/Release/*.node"
+    ],
+    "npmRebuild": true,
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "assets/icon.png",
+      "identity": null,
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "extendInfo": {
+        "NSDocumentsFolderUsageDescription": "Watercourse needs access to the selected Vault folder to read PDFs and Markdown notes.",
+        "NSDownloadsFolderUsageDescription": "Watercourse may access a Vault folder if you choose one from Downloads."
+      }
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
