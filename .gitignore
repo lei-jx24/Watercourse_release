@@ -1,0 +1,10 @@
+node_modules/
+dist/
+release/
+out/
+resources/mac/icon.iconset/
+.DS_Store
+*.log
+coverage/
+.vite/
+*.local
